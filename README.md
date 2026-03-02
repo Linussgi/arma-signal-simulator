@@ -1,5 +1,5 @@
 # arma-signal-simulator
-Interactive web-based simulator for ARMA(p, q) processes driven by white noise. Built with D3.js. 
+Interactive web-based simulator for ARMA(p, q) processes driven by white noise. Poles and zeros (shown in the unit circle) can be dragged with the mouse to observe effects in frequnecy and time domain response. Built with D3.js. 
 
 ## Features
 
