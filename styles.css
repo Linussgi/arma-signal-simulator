@@ -1,0 +1,122 @@
+:root {
+    --bg:        #080a0d;
+    --surface:   #0d1117;
+    --surface2:  #111820;
+    --border:    #1c2530;
+    --border2:   #253040;
+    --green:     #00e87a;
+    --green-dim: #00703a;
+    --red:       #ff3a5c;
+    --red-dim:   #6b0e20;
+    --blue:      #3fa8ff;
+    --blue-dim:  #0e3a60;
+    --yellow:    #ffd54f;
+    --text:      #c9d0d7;
+    --text-hi:   #c8dff0;
+    --text-dim:  #65696e;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 18px; height: 38px;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .hdr-title { font-size:14px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--green); }
+  .hdr-sub   { font-size:14px; color:var(--text-dim); letter-spacing:0.12em; }
+  .hdr-badge { font-size:14px; color:var(--text-dim); letter-spacing:0.08em; }
+  .hdr-badge span { color:var(--text-hi); }
+
+  .controls {
+    display:flex; align-items:center; gap:10px;
+    padding:8px 20px; background:var(--surface);
+    border-bottom:1px solid var(--border);
+    flex-shrink:0; flex-wrap:wrap; min-height:44px;
+  }
+  .ctrl-sep { width:1px; height:20px; background:var(--border2); flex-shrink:0; }
+  .ctrl-label { font-size:14px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); flex-shrink:0; }
+
+  .btn {
+    font-family:var(--mono); font-size:14px; font-weight:700;
+    letter-spacing:0.08em; text-transform:uppercase;
+    padding:4px 12px; border:1px solid; cursor:pointer;
+    background:transparent; transition:background .12s,color .12s;
+    outline:none; flex-shrink:0;
+  }
+  .btn-pole  { color:var(--red);  border-color:var(--red-dim);  }
+  .btn-pole:hover:not(:disabled)  { background:var(--red);  color:#000; }
+  .btn-zero  { color:var(--blue); border-color:var(--blue-dim); }
+  .btn-zero:hover:not(:disabled)  { background:var(--blue); color:#000; }
+  .btn-util  { color:var(--text); border-color:var(--border2);  }
+  .btn-util:hover:not(:disabled)  { background:var(--border2); color:var(--text-hi); }
+  .btn:disabled { opacity:0.2; cursor:not-allowed; }
+
+  .badges { display:flex; gap:6px; flex-wrap:wrap; }
+  .badge {
+    display:inline-flex; align-items:center; gap:5px;
+    font-size:14px; letter-spacing:0.05em;
+    padding:3px 8px 3px 9px; border:1px solid; white-space:nowrap;
+  }
+  .badge.pole { border-color:var(--red-dim);  color:var(--red);  }
+  .badge.zero { border-color:var(--blue-dim); color:var(--blue); }
+  .badge-rm {
+    background:none; border:none; cursor:pointer;
+    font-family:var(--mono); font-size:14px; line-height:1;
+    opacity:0.4; transition:opacity .1s; padding:0; color:inherit;
+  }
+  .badge-rm:hover { opacity:1; }
+
+  .main { display:flex; flex:1; overflow:hidden; }
+
+  /* Left column: PZ + frequency response */
+  .left-panel {
+    width: 480px; flex-shrink:0;
+    border-right:1px solid var(--border);
+    display:flex; flex-direction:column; overflow:hidden;
+  }
+  .pz-section {
+    flex-shrink:0; display:flex; flex-direction:column;
+    border-bottom:1px solid var(--border);
+  }
+  .fr-section {
+    flex:1; display:flex; flex-direction:column;
+    overflow:hidden; min-height:0;
+  }
+
+  /* Right column: time series */
+  .ts-panel { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+  .panel-hdr {
+    font-size:14px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--text-dim); padding:8px 16px;
+    border-bottom:1px solid var(--border); flex-shrink:0;
+    font-weight:700;
+  }
+  .panel-hdr em { color:var(--text-dim); opacity:0.7; }
+
+  #pz-wrap { display:flex; align-items:center; justify-content:center; padding:10px 10px 8px; }
+  #fr-wrap { flex:1; padding:6px 8px 4px; overflow:hidden; min-height:0; }
+  #ts-wrap { flex:1; padding:10px 8px 0; overflow:hidden; }
+
+  .axis path, .axis line { stroke:var(--border2); }
+  .axis text { fill:var(--text-dim); font-size:12px; font-family:var(--mono); }
+
+  .btn-impulse {
+    color: var(--yellow); border-color: #5a4a00;
+  }
+  .btn-impulse:hover:not(:disabled) { background: var(--yellow); color: #000; }
+  .btn-impulse.active {
+    background: var(--yellow); color: #000;
+    box-shadow: 0 0 10px rgba(255,213,79,0.4);
+  }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARMA Pole-Zero Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="hdr-title">ARMA Pole-Zero Explorer</div>
+  <div class="hdr-badge">AR(<span id="ar-ord">0</span>) MA(<span id="ma-ord">0</span>)</div>
+</header>
+
+<div class="controls">
+  <span class="ctrl-label">Poles</span>
+  <button class="btn btn-pole" id="btn-add-pole">+ Add Pair</button>
+  <div class="badges" id="pole-badges"></div>
+  <div class="ctrl-sep"></div>
+  <span class="ctrl-label">Zeros</span>
+  <button class="btn btn-zero" id="btn-add-zero">+ Add Pair</button>
+  <div class="badges" id="zero-badges"></div>
+  <div class="noise-ctrl" style="margin-left:auto; display:flex; align-items:center; gap:8px;">
+    <button class="btn btn-util" id="btn-reseed">Reseed Noise</button>
+    <button class="btn btn-impulse" id="btn-impulse">Impulse Response</button>
+  </div>
+</div>
+
+<main class="main">
+  <div class="left-panel">
+    <div class="pz-section">
+      <div class="panel-hdr">Pole-Zero Plot</div>
+      <div id="pz-wrap"></div>
+    </div>
+    <div class="fr-section">
+      <div class="panel-hdr">Frequency Response Magnitude</div>
+      <div id="fr-wrap"></div>
+    </div>
+  </div>
+
+  <div class="ts-panel">
+    <div class="panel-hdr">Time Series &nbsp;<em id="ts-mode-label"> ARMA-filtered white noise</em></div>
+    <div id="ts-wrap"></div>
+  </div>
+</main>
+
+<script type="module" src="js/events.js"></script>
+
+</body>
+</html>
