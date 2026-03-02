@@ -1,5 +1,7 @@
 # arma-signal-simulator
-Interactive web-based simulator for ARMA(p, q) processes driven by white noise. Poles and zeros (shown in the unit circle) can be dragged with the mouse to observe effects in frequnecy and time domain response. Built with D3.js. 
+Interactive web-based simulator for ARMA(p, q) processes driven by white noise. Poles and zeros (shown inside the unit circle) can be dragged with the mouse to observe effects in frequnecy and time domain response. Built with D3.js. 
+
+App is hosted hosted [here](https://linussgi.github.io/arma-signal-simulator/). Note: For best experience, open link on a desktop browser (not currently mobile friendly).
 
 ## Features
 
@@ -12,6 +14,8 @@ The user can explore the effect of pole and zero placement on ARMA processes (an
 - The magnitude of the frequency response of the system is shown below the unit circle plot. The ticks are marked a multiples of $\pi$ from 0 to 1.
 
 ![Interface](images/webpage-demo.png)
+
+Red crosses and blue circles can be manipulated with the mouse to affect system response.
 
 ## Mathematical representation
 
